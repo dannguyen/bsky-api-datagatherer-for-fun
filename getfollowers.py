@@ -21,14 +21,14 @@ def get_client(username: str, passkey: str):
     return client
 
 
-
-def get_profiles(client, actors:list[str]) -> list[dict]:
+def get_profiles(client, actors: list[str]) -> list[dict]:
     """
     https://docs.bsky.app/docs/tutorials/viewing-profiles
     """
     resp = client.get_profiles(actors)
-    profilelist = resp.dict()['profiles']
+    profilelist = resp.dict()["profiles"]
     return profilelist
+
 
 def get_followers(client, username: str) -> None:
     _iter = 0
